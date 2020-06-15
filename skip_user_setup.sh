@@ -32,9 +32,11 @@ if [[ ${osvers} -ge 7 ]]; then
         /usr/bin/defaults write "${USER_HOME}"/Library/Preferences/com.apple.SetupAssistant LastSeenCloudProductVersion "${sw_vers}"
         /usr/bin/defaults write "${USER_HOME}"/Library/Preferences/com.apple.SetupAssistant LastSeenBuddyBuildVersion "${sw_build}"
         /usr/sbin/chown "${USER_UID}" "${USER_HOME}"/Library/Preferences/com.apple.SetupAssistant.plist
+        echo "Setup skipped for ${USER_HOME}"
       fi
     fi
   done
 fi
+
 
 exit 0
