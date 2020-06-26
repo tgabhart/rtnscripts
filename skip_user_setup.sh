@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# check for root
+if [[ $UID != 0 ]]; then
+	echo Please run this script with sudo. Thanks!
+	echo “sudo $0 $*”
+	exit 1
+fi
+
 # Determine OS version
 osvers=$(sw_vers -productVersion | awk -F. '{print $2}')
 sw_vers=$(sw_vers -productVersion)
